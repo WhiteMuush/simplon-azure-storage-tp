@@ -10,4 +10,4 @@ export AZURE_STORAGE_CONNECTION_STRING=$(az storage account show-connection-stri
   --query          connectionString \
   --output         tsv)
 
-echo "Connection string récupérée ✅"
+echo "NEVER COMMIT YOUR STRING CONNECTION !!" 
