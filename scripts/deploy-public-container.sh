@@ -13,15 +13,28 @@ az storage container list \
   --output table
 }
 
+function verif-public-access(){
+CONFIG_URL=$(az storage blob url \
+  --container-name "api-config" \
+  --name           "config.json" \
+  --output         tsv)
+
+echo "URL publique : $CONFIG_URL"
+curl -s "$CONFIG_URL"
+
+}
+
 function deploy-public-api(){
 az storage container create \
   --name        "api-config" \
   --public-access blob
 }
 
+
 function main(){
 deploy-public-api
 verif-container
+verif-public-access
 }
 
 main

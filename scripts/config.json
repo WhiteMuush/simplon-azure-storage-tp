@@ -1,0 +1,6 @@
+{
+  "app": "AzureTech",
+  "version": "1.0",
+  "environment": "production",
+  "endpoints": ["/api/hello", "/api/status"]
+}
